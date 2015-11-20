@@ -15,8 +15,12 @@ int main(int argc, const char * argv[])
     Trie *T= (Trie*)malloc(sizeof(Trie));
     //trie_initialize(T);
     char str[26];
-    FILE *f = fopen("/Users/tolaz/Desktop/C/Projects/Hewa_Tolaz_A3/Hewa_Tolaz_A3/words.txt", "r");
-    
+    FILE *f = fopen("/usr/courses/cps305/assign/assign3/american-english-no-accents", "r");
+    if(f == NULL) 
+	{
+		printf("Your file don't make sense, bruh.\n");
+		return 2;
+	}
     while(fscanf(f, "%s", str) != EOF)
     {
         trie_add_word(T, str);
