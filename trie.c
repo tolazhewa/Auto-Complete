@@ -5,7 +5,6 @@
 
 void trie_initialize(Trie *T, int loc) {
 	T->next[loc] = (Trie*)malloc(sizeof(Trie));
-	T->next[loc]->isWord = 0;
 }
 
 void trie_print(Trie *T, char *word){
@@ -17,7 +16,7 @@ void trie_print(Trie *T, char *word){
 				temp++;
 			*temp = trie_get_char(i);
 			*(++temp) = '\0';
-			if(T->next[i]->isWord)
+			if(T->next[i]->next[53] != NULL)
 				printf("%s\n", word);
 			trie_print(T->next[i], word);
 			temp--;
@@ -34,7 +33,7 @@ int trie_word_nodes(Trie *T, char *w) {
 			return 0;
 		else T=T->next[loc];
 	}
-	if(T->isWord) printf("%s\n", w);
+	if(T->next[53] != NULL) printf("%s\n", w);
 	trie_print(T,w);
 	return 1;
 }
@@ -48,6 +47,7 @@ char trie_get_char(int loc) {
 int trie_get_loc(char c) {
 	if(c >= 'a' && c <= 'z') return c - 96;
 	else if(c >= 'A' && c <= 'Z') return c - 38;
+	else if(c == '*') return 42;
 	else if(c == '\'') return 0;
 	else return -1;
 }
@@ -62,7 +62,7 @@ int trie_add_word(Trie *T, char *w) {
 	if(T->next[loc] == NULL)
 		trie_initialize(T, loc);
 	if(i == length-1)
-		T->next[loc]->isWord = 1;
+		trie_initialize(T->next[loc],53);
 	T=T->next[loc];
 	}
 	return 0;

@@ -2,8 +2,7 @@
 #define trie_h
 
 typedef struct TrieTag {
-	struct TrieTag *next[53];
-	int isWord;
+	struct TrieTag *next[54];
 }Trie;
 
 void trie_initialize(Trie *T, int loc);
