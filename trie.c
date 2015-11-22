@@ -7,6 +7,15 @@ void trie_initialize(Trie *T, int loc) {
 	T->next[loc] = (Trie*)malloc(sizeof(Trie));
 }
 
+void trie_free(Trie *T) {
+	int i;
+	for(i = 0; i < 53; i++) {
+		if(T->next[i] != NULL) {
+			trie_free(T->next[i]);
+			free(T->next[i]);
+		}
+	}
+}
 void trie_print(Trie *T, char *word){
 	int i;
 	for(i = 0; i < 53; i++) {

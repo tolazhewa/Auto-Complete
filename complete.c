@@ -23,6 +23,7 @@ int main(int argc, const char *argv[]) {
 		printf("Enter String: ");
 	}
 	printf("\n");
+	trie_free(T);
 	free(str);
 	free(T);
 }

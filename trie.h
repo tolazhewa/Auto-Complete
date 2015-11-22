@@ -7,6 +7,7 @@ typedef struct TrieTag {
 
 void trie_initialize(Trie *T, int loc);
 void trie_print(Trie *T, char *word);
+void trie_free(Trie *T);
 int trie_word_nodes(Trie *T, char *w);
 char trie_get_char(int loc);
 int trie_get_loc(char c);
