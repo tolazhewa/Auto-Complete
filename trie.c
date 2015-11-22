@@ -9,11 +9,11 @@ void trie_initialize(Trie *T, int loc) {
 
 void trie_free(Trie *T) {
 	int i;
-	for(i = 0; i < 53; i++) {
+	for(i = 0; i < 54; i++) {
 		if(T->next[i] != NULL) {
 			trie_free(T->next[i]);
-			free(T->next[i]);
 		}
+		free(T->next[i]);
 	}
 }
 void trie_print(Trie *T, char *word){
