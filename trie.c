@@ -9,7 +9,8 @@ void trie_initialize(Trie *T, int loc) {
 }
 
 void trie_print(Trie *T, char *word){
-	for(int i = 0; i < 53; i++) {
+	int i;
+	for(i = 0; i < 53; i++) {
 		if(T->next[i]!= NULL) {
 			char *temp = word;
 			while(*temp != '\0') 

@@ -1,8 +1,3 @@
-/*
-
-
- */
-
 #ifndef trie_h
 #define trie_h
 
@@ -18,7 +13,4 @@ char trie_get_char(int loc);
 int trie_get_loc(char c);
 int trie_add_word(Trie *T, char *w);
 
-
-
 #endif
-
