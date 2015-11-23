@@ -19,7 +19,7 @@ void trie_file_read(Trie **T) {
     char *str = (char*)calloc(sizeof(char), 26);
     
     //file opening and error checking
-    f = fopen("/Users/tolaz/desktop/assign3/american-english-no-accents","r");
+    f = fopen("/usr/courses/cps305/assign/assign3/american-english-no-accents","r");
 	if(f == NULL) {
 		printf("There is no such file.\n");
         return;

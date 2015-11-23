@@ -15,7 +15,7 @@
  * function: initialize needed node
  */
 void trie_initialize(Trie **T) {
-	*T = (Trie*)malloc(sizeof(Trie));
+	*T = (Trie*)calloc(sizeof(Trie),1);
 	(*T)->isWord = 0;
 }
 
