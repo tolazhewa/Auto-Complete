@@ -14,9 +14,9 @@
 /*
  * function: initialize needed node
  */
-void trie_initialize(Trie *T, int loc) {
-	T->next[loc] = (Trie*)malloc(sizeof(Trie));
-	T->next[loc]->isWord = 0;
+void trie_initialize(Trie **T) {
+	*T = (Trie*)malloc(sizeof(Trie));
+	(*T)->isWord = 0;
 }
 
 /*
@@ -74,6 +74,7 @@ void trie_word_nodes(Trie *T, char *w) {
 	//calls on trie_print function to print all other auto-complete
 	trie_print(T,w);
 }
+
 /*
  * function: gets the location of a character in the array
  */
@@ -82,6 +83,7 @@ char trie_get_char(int loc) {
 	else if(loc <= 26) return (char)(loc + 96);
 	else return (char)(loc + 38);
 }
+
 /*
  * function: gets the character based on its location on the array.
  */
@@ -91,6 +93,7 @@ int trie_get_loc(char c) {
 	else if(c == '\'') return 0;
 	else return -1;
 }
+
 /*
  * function: adds word to the trie one node at a time.
  */
@@ -102,7 +105,7 @@ void trie_add_word(Trie *T, char *w) {
 		loc = trie_get_loc(w[i]);
 		//if the node doesn't exist: create node using trie_initialize()
 		if(T->next[loc] == NULL)
-			trie_initialize(T, loc);
+			trie_initialize(&T->next[loc]);
 		//if its the last letter, indicate that it is a word.
 		if(i == length-1)
 			T->next[loc]->isWord = 1;

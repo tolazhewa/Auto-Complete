@@ -20,7 +20,7 @@ typedef struct TrieTag {
 /*
  * All the prototypes for trie functions/methods
  */
-void trie_initialize(Trie *T, int loc);
+void trie_initialize(Trie **T);
 void trie_print(Trie *T, char *word);
 void trie_free(Trie *T);
 void trie_word_nodes(Trie *T, char *w);
