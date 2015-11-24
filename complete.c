@@ -30,8 +30,9 @@ void trie_file_read(Trie **T) {
 	}
     //closing file and freeing memory allocated for str
 	fclose(f);
-    free(str);
+	free(str);
 }
+
 /*
  * Gets input and outputting all the possible auto-completes
  */
@@ -67,6 +68,7 @@ void trie_auto_complete(Trie **T) {
             //calls on all the possible auto-completes
             trie_word_nodes(*T, str);
         }
+	isValid = 1;
         printf("Enter String: ");
     }
     printf("\n");
