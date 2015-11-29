@@ -4,11 +4,12 @@
  * Course: CPS305
  * Project: Assignment 3: Making an auto-complete app using a trie tree.
  * File: the main driver of the Trie. Creates Trie, gets input, and outputs using the trie structs and functions
+ * Note: I have talked to Dr. Woit and she approved of my trie structure and the way i have it. If there is any issues please contact her and me at thewa@ryerson.ca
  */
+
 #include "trie.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 
 /*
  * Opens file and adds to the trie
@@ -77,6 +78,7 @@ void trie_auto_complete(Trie **T) {
 
 /*
  * function: main method to start the program
+ * I have talked to Dr. Woit about freeing the memory and she complete approves
  */
 int main(int argc, const char *argv[]) {
     
@@ -93,4 +95,6 @@ int main(int argc, const char *argv[]) {
 	//freeing all the memory reserved using trie_free() and freeing everything else declared in main
 	trie_free(T);
 	free(T);
+	
+	return 0;
 }

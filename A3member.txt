@@ -7,5 +7,5 @@ Edit this in appropriately:
      TAs:  Chris D Monteiro, Muhammad Saleem
      LAB:  Wed/12 PM
      Submit Person: Tolaz Hewa
-     Other Members: Alessandro Profenna
+     Other Members: Alessandro Profenna, Bojan Oro
 
